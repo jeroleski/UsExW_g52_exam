@@ -2,13 +2,18 @@
     background: #A1EF7A;
 }
 
+.navbar {
+    padding-bottom: 0;
+}
+
 .navbar-brand {
-    margin-left: 1rem;
+    margin-left: 2%;
 }
 
 .navbar-toggler {
-    margin-right: 1rem;
+    margin-right: 2%;
     font-size: 1.75rem;
+    margin-bottom: 1%;
 }
 
 .logo {
@@ -25,4 +30,12 @@
 
 .nav-itempad {
     padding-left: 2%;
+}
+
+.navbar-nav {
+    padding-right: 2%;
+}
+
+nav ul {
+    background: #D0F4BA;
 }
