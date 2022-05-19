@@ -1,8 +1,16 @@
 const auth = firebase.auth()
 const googleProvider = new firebase.auth.GoogleAuthProvider()
 const facebookProvider = new firebase.auth.FacebookAuthProvider()
-const appleProvider = new firebase.auth.OAuthProvider('apple.com')
 
+auth.onAuthStateChanged(user => {
+    if (user) { //user is signed in
+        //go to rent car map
+
+    } else {//user is signed out
+        //go back to log in page
+
+    }
+})
 
 function signIn(p) {
     let provider
@@ -13,9 +21,6 @@ function signIn(p) {
         case "facebook":
             provider = facebookProvider
             break
-        case "apple":
-            provider = appleProvider
-            break
         default:
             return
     }
@@ -23,7 +28,20 @@ function signIn(p) {
     auth.signInWithPopup(provider)
         .then(result => {
             let user = result.user
+            console.log("signed in as:")
             console.log(user)
+            sessionStorage.setItem("user", user)
+        })
+        .catch(error => {
+            console.log(error)
+        })
+}
+
+function signOut() {
+    auth.signOut()
+        .then(() => {
+            console.log("user has signed out")
+            sessionStorage.removeItem("user")
         })
         .catch(error => {
             console.log(error)
