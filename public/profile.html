@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="fullName">Full name</label>
+            <input id="fullName" class="form-control" type="text" placeholder="Your name">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="birthday">Full name</label>
+            <input id="birthday" class="form-control" type="date" placeholder="Your name">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="creditCardNumber">Credit card number</label>
+            <input id="creditCardNumber" class="form-control" type="password" pattern="\d{16}" aria-describedby="paymentHelp" placeholder="1234 5678 9012 3456">
+            <small id="paymentHelp" class="form-text text-muted">Click the fields to show the data</small>
+        </div>
+        <div class="form-group col-md-4">
+            <label for="creditCardExpiration">Expiration month and year</label>
+            <input id="creditCardExpiration" class="form-control" type="month" aria-describedby="paymentHelp" placeholder="today">
+        </div>
+        <div class="form-group col-md-2">
+            <label for="creditCardVerify">CVV</label>
+            <input id="creditCardVerify" class="form-control" type="password" pattern="\d{3}" aria-describedby="paymentHelp" placeholder="123">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="driversLicense">Drivers License Number</label>
+            <input id="driversLicense" type="text" class="form-control" placeholder="See drivers license">
+        </div>
+        <div class="form-group col-md-6">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </div>
+</form>
+
+<script src="profile.js"></script>
+</body>
+</html>
