@@ -1,3 +1,4 @@
+/* NavBar */
 .darkerGreen {
     background: #A1EF7A;
 }
@@ -40,6 +41,10 @@ nav ul {
     background: #D0F4BA;
 }
 
+/* General text */
+
+
+/* aboutUs */
 .au-logo {
     text-align: center;
 }
@@ -54,6 +59,13 @@ nav ul {
     font-style: italic;
 }
 
+/* carsNearby*/
+.addressSearch {
+    background-color: #D0F4BA;
+    border: none;
+}
+
+/* For wide screens  */
 @media (min-width:992px) {
     nav ul {
         background: #A1EF7A;
