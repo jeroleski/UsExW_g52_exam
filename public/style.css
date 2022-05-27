@@ -48,6 +48,10 @@ nav ul {
     text-align: center;
 }
 
+.bold {
+    font-weight: bold;
+}
+
 /* General button */
 .blueButton {
     background-color: #78C6F7;
@@ -95,10 +99,14 @@ nav ul {
     background-color: #D0F4BA;
 
 }
+.row {
+    width: 100%;
+}
 
 .column {
     float: left;
     width: 50%;
+    text-align: left;
 }
 
 /* rental */
@@ -112,6 +120,12 @@ nav ul {
 
 .pickUpReturn button {
 
+}
+
+/* receipt */
+.total {
+    background-color: #D0F4BA;
+    text-align: center;
 }
 
 /* For wide screens  */
