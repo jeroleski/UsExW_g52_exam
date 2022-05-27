@@ -42,10 +42,11 @@ nav ul {
 }
 
 /* General text */
+ 
 .title {
     padding-top: 2%;
     padding-bottom: 2%;
-    text-align: center;
+    text-align:basic_html_and_css center;
 }
 
 .bold {
