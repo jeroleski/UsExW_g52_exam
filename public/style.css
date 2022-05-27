@@ -101,6 +101,19 @@ nav ul {
     width: 50%;
 }
 
+/* rental */
+.timer {
+    text-align: center;
+}
+
+.pickUpReturn {
+    text-align: center;
+}
+
+.pickUpReturn button {
+
+}
+
 /* For wide screens  */
 @media (min-width:992px) {
     nav ul {
