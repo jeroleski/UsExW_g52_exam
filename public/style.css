@@ -42,6 +42,22 @@ nav ul {
 }
 
 /* General text */
+ 
+.title {
+    padding-top: 2%;
+    padding-bottom: 2%;
+    text-align:basic_html_and_css center;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+/* General button */
+.blueButton {
+    background-color: #78C6F7;
+    border: none;
+}
 
 
 /* aboutUs */
@@ -63,6 +79,54 @@ nav ul {
 .addressSearch {
     background-color: #D0F4BA;
     border: none;
+}
+
+/* carsNearby*/
+.back {
+    /* Fix position */
+}
+
+.back button{
+    background-color: transparent;
+    border: none;
+}
+.back img {
+    width: 5%;
+}
+
+/* carInfo */
+.footer {
+    width: 100%;
+    background-color: #D0F4BA;
+
+}
+.row {
+    width: 100%;
+}
+
+.column {
+    float: left;
+    width: 50%;
+    text-align: left;
+}
+
+/* rental */
+.timer {
+    text-align: center;
+}
+
+.pickUpReturn {
+    text-align: center;
+}
+
+.pickUpReturn button {
+
+}
+
+/* receipt */
+.total {
+    background-color: #D0F4BA;
+    text-align: center;
 }
 
 /* For wide screens  */
