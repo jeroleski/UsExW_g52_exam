@@ -3,9 +3,47 @@
 <head>
   <meta charset="UTF-8">
   <title>Title</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
   <meta name="viewport" content="width=device-width, inital-scale=1">
+
+  <style>
+    .parent {
+      position: relative;
+      top: 0;
+      left: 0;
+    }
+    .background {
+      position: relative;
+      top: 0;
+      left: 0;
+    }
+    .marker {
+      position: absolute;
+      max-width: 50px;
+      height: auto;
+    }
+    .image1 {
+      top: 50px;
+      left: 50px;
+    }
+    .image2 {
+      top: 500px;
+      left: 500px;
+    }
+    .image3 {
+      top: 500px;
+      left: 200px;
+    }
+    .image4 {
+      top: 300px;
+      left: 650px;
+    }
+    .image5 {
+      top: 100px;
+      left: 300px;
+    }
+  </style>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light navbar-static-top darkerGreen">
@@ -38,8 +76,36 @@
   <input class="addressSearch" type="text" id="search" name="search" placeholder="Search Address...">
 </form>
 
+<div class="parent">
+  <img class="background" src="pics/mapBackground.png" onclick=""/>
+  <img class="marker image1" src="pics/mapMarker.png" onclick="openConfirmation('Laura')"/>
+  <img class="marker image2" src="pics/mapMarker.png" onclick="openConfirmation('Connie')"/>
+  <img class="marker image3" src="pics/mapMarker.png" onclick="openConfirmation('Johan')"/>
+  <img class="marker image4" src="pics/mapMarker.png" onclick="openConfirmation('Wilhelm')"/>
+  <img class="marker image5" src="pics/mapMarker.png" onclick="openConfirmation('Sanne')"/>
+</div>
 
+<div class="modal fade" id="carSelectModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 id="nameLabel" class="modal-title" id="exampleModalLabel"></h5>
+      </div>
+      <div class="modal-body">
+        <h3 id="locationLabel"></h3>
+        <h3 id="powerLabel"></h3>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button id="continueButton" type="button" class="btn btn-primary">Continue</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="carsNearby.js"></script>
 <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
 </body>
 </html>

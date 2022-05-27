@@ -1,3 +1,6 @@
+//TODO: the go back and save button should share the same spot (save is at the wrong spot)
+//TODO: make the dummy data use data from the logged in user (session storage key: "user")
+
 function listenForChanges() {
     let form = document.getElementById("profileData");
     let backButton = document.getElementById("backButton")
