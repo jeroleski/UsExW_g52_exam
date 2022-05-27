@@ -1,0 +1,28 @@
+.darkerGreen {
+    background: #A1EF7A;
+}
+
+.navbar-brand {
+    margin-left: 1rem;
+}
+
+.navbar-toggler {
+    margin-right: 1rem;
+    font-size: 1.75rem;
+}
+
+.logo {
+    height: 3rem;
+}
+
+.navbar-collapse.collapse.in {
+    display: block!important;
+}
+
+.padLeft{
+    margin-left: auto!important;
+}
+
+.nav-itempad {
+    padding-left: 2%;
+}
