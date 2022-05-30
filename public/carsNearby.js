@@ -11,7 +11,6 @@ class Car {
         this.power = power
     }
 }
-
 function openConfirmation(name) {
     let cars = getDummyData()
     let car = cars.get(name)
@@ -20,11 +19,12 @@ function openConfirmation(name) {
 
     document.getElementById("nameLabel").innerText = car.name
     document.getElementById("locationLabel").innerText = car.location
-    document.getElementById("powerLabel").innerText = car.power + " % charged"
+    document.getElementById("powerLabel").innerText = "Power: "+car.power+"%"
+
 
     let conBtn = document.getElementById("continueButton")
     conBtn.onclick = function () {
-        window.location.href = `carInfo.html?name=${car.name}&location=${car.location}&power=${car.power}`
+        window.location.href = `carInfo.html?name=${car.name}&carLocation=${car.location}&power=${car.power}`
     }
 
     $('#carSelectModal').modal('show')
@@ -46,4 +46,17 @@ function getDummyData() {
     cars.set(car5.name, car5)
     return cars
 }
+
+
+function loadCarInfoPage(){
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+
+    document.getElementById('carName').innerText=urlParams.get('name');
+    document.getElementById('location').innerText=urlParams.get('carLocation');
+    document.getElementById('power').innerText="Power: "+urlParams.get('power')+"%";
+}
+
+
+
 
