@@ -22,6 +22,7 @@ function loadReceipt() {
     document.getElementById("dateLabel").innerText = new Date().toLocaleDateString()
     document.getElementById("usedTimeLabel").innerText = timeUsed
     document.getElementById("initialPriceLabel").innerText = `${initialPrice}`
+    document.getElementById("pricePrMinuteLabel").innerText = `${pricePrMinute}`
     document.getElementById("usagePriceLabel").innerText = `${usagePrice}`
     document.getElementById("totalPriceLabel").innerText = `${totalPrice}`
 }
