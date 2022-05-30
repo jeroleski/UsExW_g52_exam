@@ -1,3 +1,9 @@
+//TODO: check that a car with session key "currentCar" is not rented when renting a new car
+//TODO: Receipt
+//TODO: Make a timer on rental
+//TODO: fix firebase login
+//TODO: make profile use user data
+
 class Car {
     constructor(name, location, power) {
         this.name = name
@@ -14,7 +20,7 @@ function openConfirmation(name) {
 
     document.getElementById("nameLabel").innerText = car.name
     document.getElementById("locationLabel").innerText = car.location
-    document.getElementById("powerLabel").innerText = car.power
+    document.getElementById("powerLabel").innerText = car.power + " % charged"
 
     let conBtn = document.getElementById("continueButton")
     conBtn.onclick = function () {
@@ -40,6 +46,4 @@ function getDummyData() {
     cars.set(car5.name, car5)
     return cars
 }
-
-
 
