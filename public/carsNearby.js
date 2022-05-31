@@ -44,10 +44,34 @@ function loadCarInfoPage(){
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
 
-    document.getElementById('carName').innerText=urlParams.get('name');
-    document.getElementById('location').innerText=urlParams.get('carLocation');
-    document.getElementById('power').innerText="Power: "+urlParams.get('power')+"%";
+    let name = urlParams.get("name")
+    let carLocation = urlParams.get('carLocation')
+    let power = "Power: "+urlParams.get('power')+"%";
+    document.getElementById('carName').innerText=name;
+    document.getElementById('location').innerText=carLocation;
+    document.getElementById('power').innerText=power;
+
+    document.getElementById('confirm').onclick= function () {setCurrentCar(name, carLocation, power); window.location.href = 'rental.html'}
 }
 
+function setCurrentCar(name, carLocation, power){
+    let currentCar = new Car(name, carLocation, power);
+    sessionStorage.setItem("currentCar", currentCar);
+}
+
+function currentCarName(){
+    if(sessionStorage.getItem("currentCar") == null) return;
+    document.getElementById('carName').innerText=sessionStorage.getItem("currentCar").name;
+}
+
+function currentCarLocation(){
+    if(sessionStorage.getItem("currentCar") == null) return;
+    document.getElementById('location').innerText=sessionStorage.getItem("currentCar").location;
+}
+
+function currentCarPower(){
+    if(sessionStorage.getItem("currentCar") == null) return;
+    document.getElementById('power').innerText=sessionStorage.getItem("currentCar").power;
+}
 
 
