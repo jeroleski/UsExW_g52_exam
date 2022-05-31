@@ -9,6 +9,8 @@ This car sharing website, were created as part of the course
 
 #### Set up dependencies:
 
+Make sure to have 'npm' installed. Then run
+
 ``$ npm install -g firebase-tools``
 
 #### Run the project:
