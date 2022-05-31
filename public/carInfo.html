@@ -36,10 +36,10 @@
     <h1>Rent Car</h1>
 </div>
 <a class="back" href="carsNearby.html"><button><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Back_Arrow.svg/1200px-Back_Arrow.svg.png"></button></a>
-<div id="carInfo">  <! -- Make it work with js -->
+<div id="carInfo">
     <h2 id="carName"></h2>
-    <h4 id="location"></h4>
-    <h4 id="power"></h4>
+    <p id="location" class="bold"></p>
+    <p id="power" class="bold"></p>
 </div>
 <div>
     <h3>About the car</h3>
@@ -50,12 +50,12 @@
 <div class="footer">
     <container class="row">
         <div class="column">
-            <p>Starting price: DKK</p>
-            <p>Price per hour: DKK</p>
+            <p>Starting price: 50 DKK</p>
+            <p>Price per minute: 3 DKK</p>
         </div>
         <div class="column">
             <form>
-                <button class="blueButton">Confirm</button>
+                <button type="button" class="blueButton" id="confirm">Confirm</button>
             </form>
         </div>
     </container>
