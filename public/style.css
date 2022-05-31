@@ -60,13 +60,40 @@ nav ul {
     border: none;
 }
 
-
-/* aboutUs */
-.au-logo {
+.center {
     text-align: center;
 }
 
-.au-logo img {
+/* frontpage */
+.logoFrontpage {
+    padding-top: 2%;
+    padding-bottom: 2%;
+    width: 50%;
+}
+#join {
+    display: block;
+    margin: 10% auto;
+}
+
+#login {
+    display: block;
+    margin: 1% auto auto;
+}
+
+#greenLine {
+    background-color: #D0F4BA;
+    position: absolute;
+    height: 200%;
+    width: 45%;
+    left: 30%;
+    top: -200px;
+    transform: rotate(10deg);
+    z-index: -1;
+
+}
+
+/* aboutUs */
+.au-logo {
     padding-top: 2%;
     padding-bottom: 2%;
     width: 50%;
@@ -134,5 +161,15 @@ nav ul {
 @media (min-width:992px) {
     nav ul {
         background: #A1EF7A;
+    }
+
+    #join {
+        display: inline;
+        margin: auto;
+    }
+
+    #login {
+        display: inline;
+        margin: auto;
     }
 }
