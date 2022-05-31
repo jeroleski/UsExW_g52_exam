@@ -81,6 +81,3 @@ function currentCarPower(){
     if(sessionStorage.getItem("currentCar") == null) return;
     document.getElementById('power').innerText=sessionStorage.getItem("currentCar").power;
 }
-
-
-
