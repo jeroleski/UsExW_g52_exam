@@ -12,6 +12,15 @@ auth.onAuthStateChanged(user => {
     }
 })
 
+function pageUsage() {
+    let params = new URLSearchParams(window.location.search)
+    if (params.get("usage") === "login") {
+        document.getElementById("usedFor").innerText = "Log in using:"
+    } else {
+        document.getElementById("usedFor").innerText = "Sign up using:"
+    }
+}
+
 function signIn(p) {
     let provider
     switch (p) {
