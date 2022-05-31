@@ -8,18 +8,20 @@ let minutes = 0
 let seconds = 0
 
 function useCar() {
-    if (! sessionStorage.getItem("rentedTime")) sessionStorage.setItem("rentedTime", `${Date.now()}`)
-
-    let carUseButton = document.getElementById("useCarButton")
-    if (sessionStorage.getItem("carLocked")) {
-        carUseButton.innerText = "Unlock car"
-        sessionStorage.removeItem("carLocked")
-    } else {
-        carUseButton.innerText = "Lock car"
-        sessionStorage.setItem("carLocked", "locked")
+    if (! sessionStorage.getItem("rentedTime")) {
+        sessionStorage.setItem("rentedTime", `${Date.now()}`)
+        document.getElementById("returnCarButton").innerText = "Return car"
+        startTimer()
     }
 
-    if (! timeChanger) startTimer()
+    let useCarButton = document.getElementById("useCarButton")
+    if (sessionStorage.getItem("carLocked")) {
+        useCarButton.innerText = "Unlock car"
+        sessionStorage.removeItem("carLocked")
+    } else {
+        useCarButton.innerText = "Lock car"
+        sessionStorage.setItem("carLocked", "locked")
+    }
 }
 
 function startTimer() {
@@ -44,15 +46,25 @@ function startTimer() {
     }, 1000)
 }
 
+function time() {
+    return minutes + (60 * hours)
+}
+
 function price() {
-    let timeUsed = minutes + (60 * hours)
-    return initialPrice + (pricePrMinute * timeUsed)
+    return initialPrice + (pricePrMinute * time())
 }
 
 function goToReceipt() {
+    let carName = ""
+    let car = sessionStorage.getItem("currentCar")
+    if (car) carName = car.name
+
     clearInterval(timeChanger)
+    sessionStorage.removeItem("currentCar")
+    sessionStorage.removeItem("rentedTime")
     sessionStorage.removeItem("carLocked")
-    window.location.href = `receipt.html`
+
+    window.location.href = `receipt.html?carName=${carName}&timeUsed=${time()}`
 }
 
 function loadRental() {

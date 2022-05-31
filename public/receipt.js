@@ -2,11 +2,11 @@ const initialPrice = 50
 const pricePrMinute = 3
 
 function loadReceipt() {
-    let car = sessionStorage.getItem("currentCar")
-    let rentedTime = sessionStorage.getItem("rentedTime")
-    let timeUsed = parseInt(rentedTime)
+    let params = new URLSearchParams(window.location.search)
+    let carName = params.get("carName")
+    let timeUsed = params.get("timeUsed")
 
-    if (! rentedTime || isNaN(timeUsed)) {
+    if (! timeUsed) {
         console.log("opening modal")
         document.getElementById("continueButton").onclick = function () {
             window.location.href = 'rental.html'
@@ -15,15 +15,12 @@ function loadReceipt() {
         return
     }
 
-    sessionStorage.removeItem("currentCar")
-    sessionStorage.removeItem("rentedTime")
-
     let usagePrice = timeUsed * pricePrMinute
     let totalPrice = usagePrice + initialPrice
 
-    document.getElementById("carNameLabel").innerText = car.name
+    document.getElementById("carNameLabel").innerText = carName
     document.getElementById("dateLabel").innerText = new Date().toLocaleDateString()
-    document.getElementById("usedTimeLabel").innerText = `${timeUsed}`
+    document.getElementById("usedTimeLabel").innerText = timeUsed
     document.getElementById("initialPriceLabel").innerText = `${initialPrice}`
     document.getElementById("pricePrMinuteLabel").innerText = `${pricePrMinute}`
     document.getElementById("usagePriceLabel").innerText = `${usagePrice}`
