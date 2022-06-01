@@ -39,15 +39,3 @@ function currentCarName(){
     let carString = document.getElementById('carName').innerText=sessionStorage.getItem("currentCar")
     return JSON.parse(carString).name;
 }
-
-function currentCarLocation(){
-    if(sessionStorage.getItem("currentCar") == null) return ""
-    let carString = document.getElementById('location').innerText=sessionStorage.getItem("currentCar")
-    return JSON.parse(carString).location
-}
-
-function currentCarPower(){
-    if(sessionStorage.getItem("currentCar") == null) return 0
-    let carString = document.getElementById('power').innerText=sessionStorage.getItem("currentCar")
-    return JSON.parse(carString).power
-}
