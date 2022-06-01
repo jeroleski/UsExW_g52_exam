@@ -1,3 +1,5 @@
+//Written by Emilia Victoria Helsted and Jack Kryger Sørensen
+
 class Car {
     constructor(name, location, power) {
         this.name = name

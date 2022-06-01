@@ -1,3 +1,5 @@
+//Written by Jack Kryger Sørensen
+
 let initialPrice = 50
 let pricePrMinute = 3
 
