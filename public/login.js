@@ -1,18 +1,3 @@
-const auth = firebase.auth()
-const googleProvider = new firebase.auth.GoogleAuthProvider()
-const facebookProvider = new firebase.auth.FacebookAuthProvider()
-
-auth.onAuthStateChanged(user => {
-    if (user) { //user is signed in
-        sessionStorage.setItem("fullName", user.displayName)
-        console.log(user.displayName)
-        window.location.href = 'carsNearby.html'
-    } else {//user is signed out
-        sessionStorage.removeItem("fullName")
-        window.location.href = 'index.html'
-    }
-})
-
 function pageUsage() {
     let params = new URLSearchParams(window.location.search)
     if (params.get("usage") === "login") {
@@ -22,21 +7,42 @@ function pageUsage() {
     }
 }
 
-function signIn(p) {
+
+function trySIgnIn(p) {
+    try {
+        firebaseSignIn(p)
+    } catch (e) {
+        console.log("opening modal")
+        $('#noFirebaseModal').modal('show')
+    }
+}
+
+function firebaseSignIn(p) {
     let provider
     switch (p) {
         case "google":
-            provider = googleProvider
+            provider = new firebase.auth.GoogleAuthProvider()
             break
         case "facebook":
-            provider = facebookProvider
+            provider = new firebase.auth.FacebookAuthProvider()
             break
         default:
             window.location.href = 'carsNearby.html'
             return
     }
 
-    auth.signInWithPopup(provider)
+    firebase.auth().onAuthStateChanged(user => {
+        if (user) { //user is signed in
+            sessionStorage.setItem("fullName", user.displayName)
+            console.log(user.displayName)
+            window.location.href = 'carsNearby.html'
+        } else {//user is signed out
+            sessionStorage.removeItem("fullName")
+            window.location.href = 'index.html'
+        }
+    })
+
+    firebase.auth().signInWithPopup(provider)
         .then(result => {
             let user = result.user
             console.log("signed in as:")
