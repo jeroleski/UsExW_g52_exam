@@ -17,7 +17,16 @@ function loadCarInfoPage(){
     document.getElementById('location').innerText=carLocation;
     document.getElementById('power').innerText=power;
 
-    document.getElementById('confirm').onclick= function () {setCurrentCar(name, carLocation, power); window.location.href = 'rental.html'}
+    if (sessionStorage.getItem("currentCar")) {
+        let message = document.createElement("p")
+        message.innerText = "You are already renting a car. Please return it before renting another one:"
+        document.getElementById("rentalInfo").innerHTML = message.outerHTML
+        let confirmButton = document.getElementById("confirm")
+        confirmButton.innerText = "See rental"
+        confirmButton.onclick = function () {window.location.href = 'rental.html'}
+    } else {
+        document.getElementById('confirm').onclick = function () {setCurrentCar(name, carLocation, power); }//window.location.href = 'rental.html'}
+    }
 }
 
 function setCurrentCar(name, carLocation, power){

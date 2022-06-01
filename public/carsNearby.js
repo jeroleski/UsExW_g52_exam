@@ -1,5 +1,3 @@
-//TODO: check that a car with session key "currentCar" is not rented when renting a new car
-
 class Car {
     constructor(name, location, power) {
         this.name = name

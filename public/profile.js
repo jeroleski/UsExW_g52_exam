@@ -1,5 +1,3 @@
-//TODO: the go back and save button should share the same spot (save is at the wrong spot)
-
 function listenForChanges() {
     let form = document.getElementById("profileData");
     let backButton = document.getElementById("backButton")
