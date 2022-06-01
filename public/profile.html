@@ -35,7 +35,9 @@
         </ul>
     </div>
 </nav>
-
+<div class="title">
+    <h1>Profile</h1>
+</div>
 <form id="profileData" class="row g-3">
     <div class="col-md-4">
         <div id="errorField" class="alert alert-danger invisible" role="alert">
@@ -60,16 +62,16 @@
         <input id="creditCardExpiration" class="form-control" type="month" aria-describedby="paymentHelp" placeholder="today">
     </div>
     <div class="col-md-2">
-        <label for="creditCardVerify">CVV</label>
+        <label for="creditCardVerify">CVV/CVC</label>
         <input id="creditCardVerify" class="form-control" type="password" pattern="\d{3}" aria-describedby="paymentHelp" placeholder="123">
     </div>
     <div class="col-md-4">
         <label for="driversLicense">Drivers License Number</label>
         <input id="driversLicense" type="text" class="form-control" placeholder="See drivers license">
     </div>
-    <div class="col-md-4">
-        <button id="backButton" type="button" class="btn btn-primary" onclick="location.href='carsNearby.html'">Go back</button>
-        <button id="saveButton" type="button" class="btn btn-primary invisible" onclick="saveData()">Save changes</button>
+    <div class="col-md-4 center">
+        <button id="backButton" type="button" class="btn  blueButton" onclick="location.href='carsNearby.html'">Back</button>
+        <button id="saveButton" type="button" class="btn invisible blueButton" onclick="saveData()">Save changes</button>
     </div>
 </form>
 
