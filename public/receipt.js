@@ -1,3 +1,5 @@
+//Written by Jack Kryger Sørensen
+
 const initialPrice = 50
 const pricePrMinute = 3
 

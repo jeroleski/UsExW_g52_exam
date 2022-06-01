@@ -1,3 +1,5 @@
+//Written by Jack Kryger Sørensen
+
 function listenForChanges() {
     let form = document.getElementById("profileData");
     let backButton = document.getElementById("backButton")
