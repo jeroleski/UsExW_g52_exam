@@ -1,3 +1,5 @@
+//Written by Emilia Victoria Helsted and Jack Kryger Sørensen
+
 class Car {
     constructor(name, location, power) {
         this.name = name
@@ -25,7 +27,7 @@ function loadCarInfoPage(){
         confirmButton.innerText = "See rental"
         confirmButton.onclick = function () {window.location.href = 'rental.html'}
     } else {
-        document.getElementById('confirm').onclick = function () {setCurrentCar(name, carLocation, power); }//window.location.href = 'rental.html'}
+        document.getElementById('confirm').onclick = function () {setCurrentCar(name, carLocation, power); window.location.href = 'rental.html'}
     }
 }
 
@@ -38,16 +40,4 @@ function currentCarName(){
     if(sessionStorage.getItem("currentCar") == null) return ""
     let carString = document.getElementById('carName').innerText=sessionStorage.getItem("currentCar")
     return JSON.parse(carString).name;
-}
-
-function currentCarLocation(){
-    if(sessionStorage.getItem("currentCar") == null) return ""
-    let carString = document.getElementById('location').innerText=sessionStorage.getItem("currentCar")
-    return JSON.parse(carString).location
-}
-
-function currentCarPower(){
-    if(sessionStorage.getItem("currentCar") == null) return 0
-    let carString = document.getElementById('power').innerText=sessionStorage.getItem("currentCar")
-    return JSON.parse(carString).power
 }

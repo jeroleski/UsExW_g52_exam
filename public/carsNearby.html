@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- Written by Emilia Victoria Helsted and Jack Kryger Sørensen -->
 <head>
   <meta charset="UTF-8">
   <title>Title</title>
@@ -7,48 +8,10 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
   <meta name="viewport" content="width=device-width, inital-scale=1">
-
-  <style>
-    .parent {
-      position: relative;
-      top: 0;
-      left: 0;
-    }
-    .background {
-      position: relative;
-      top: 0;
-      left: 0;
-    }
-    .marker {
-      position: absolute;
-      max-width: 50px;
-      height: auto;
-    }
-    .image1 {
-      top: 50px;
-      left: 50px;
-    }
-    .image2 {
-      top: 500px;
-      left: 500px;
-    }
-    .image3 {
-      top: 500px;
-      left: 200px;
-    }
-    .image4 {
-      top: 300px;
-      left: 650px;
-    }
-    .image5 {
-      top: 100px;
-      left: 300px;
-    }
-  </style>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light navbar-static-top darkerGreen">
-  <a class="navbar-brand" href="frontpage.html">
+  <a class="navbar-brand" href="index.html">
     <img class="logo" src="https://s3-alpha.figma.com/hub/file/948140848/1f4d8ea7-e9d9-48b7-b70c-819482fb10fb-cover.png" title="Logo" alt="Logo">
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-controls="navbar">
@@ -71,19 +34,21 @@
     </ul>
   </div>
 </nav>
-<h1>Cars Nearby</h1>
-<form action="">
+<div class="title">
+  <h1>Cars Nearby</h1>
+</div>
+<form class="center" action="">
   <label for="search"></label>
   <input class="addressSearch" type="text" id="search" name="search" placeholder="Search Address...">
 </form>
 
 <div class="parent">
-  <img class="background" src="pics/mapBackground.png" onclick=""/>
-  <img class="marker image1" src="pics/mapMarker.png" onclick="openConfirmation('Laura')"/>
-  <img class="marker image2" src="pics/mapMarker.png" onclick="openConfirmation('Connie')"/>
-  <img class="marker image3" src="pics/mapMarker.png" onclick="openConfirmation('Johan')"/>
-  <img class="marker image4" src="pics/mapMarker.png" onclick="openConfirmation('Wilhelm')"/>
-  <img class="marker image5" src="pics/mapMarker.png" onclick="openConfirmation('Sanne')"/>
+  <img class="background" src="pics/mapBackground.png" onclick="" alt="map of Copenhagen"/>
+  <img class="marker image1" src="pics/mapMarker.png" onclick="openConfirmation('Laura')" alt="Car location1"/>
+  <img class="marker image2" src="pics/mapMarker.png" onclick="openConfirmation('Connie')" alt="Car location2"/>
+  <img class="marker image3" src="pics/mapMarker.png" onclick="openConfirmation('Johan')" alt="Car location3"/>
+  <img class="marker image4" src="pics/mapMarker.png" onclick="openConfirmation('Wilhelm')" alt="Car location4"/>
+  <img class="marker image5" src="pics/mapMarker.png" onclick="openConfirmation('Sanne')" alt="Car location5"/>
 </div>
 
 <div class="modal fade" id="carSelectModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -96,9 +61,9 @@
         <h5 id="locationLabel"></h5>
         <h5 id="powerLabel"></h5>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-        <button id="continueButton" type="button" class="btn btn-primary">Continue</button>
+      <div class="center">
+        <button type="button" class="btn blueButton btnCN" data-bs-dismiss="modal">Cancel</button>
+        <button id="continueButton" type="button" class="btn blueButton btnCN">Continue</button>
       </div>
     </div>
   </div>

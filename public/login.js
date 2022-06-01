@@ -1,3 +1,5 @@
+//Written by Jack Kryger Sørensen
+
 function pageUsage() {
     let params = new URLSearchParams(window.location.search)
     if (params.get("usage") === "login") {

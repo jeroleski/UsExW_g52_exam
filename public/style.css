@@ -1,6 +1,14 @@
+/* Written by Emilia Victoria Helsted */
+
+:root{
+    --primary-color: #A1EF7A;
+    --secondary-color: #D0F4BA;
+    --contrast-color: #78C6F7;
+}
+
 /* NavBar */
 .darkerGreen {
-    background: #A1EF7A;
+    background: var(--primary-color);
 }
 
 .navbar {
@@ -38,30 +46,43 @@
 }
 
 nav ul {
-    background: #D0F4BA;
+    background: var(--secondary-color);
 }
 
 /* General text */
- 
 .title {
     padding-top: 2%;
     padding-bottom: 2%;
     text-align: center;
-
 }
 
 .bold {
     font-weight: bold;
 }
 
+p, h2, h3, h4, h5, ol {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
 /* General button */
 .blueButton {
-    background-color: #78C6F7;
+    background-color: var(--contrast-color);
     border: none;
+}
+
+.blueButton:hover {
+    background-color: #96cef1;
 }
 
 .center {
     text-align: center;
+}
+
+/* Invisible */
+.invisible {
+    padding: 0;
+    height: 0;
 }
 
 /* frontpage */
@@ -81,7 +102,7 @@ nav ul {
 }
 
 #greenLine {
-    background-color: #D0F4BA;
+    background-color: var(--secondary-color);
     position: absolute;
     height: 200%;
     width: 45%;
@@ -105,8 +126,9 @@ nav ul {
 
 /* carsNearby*/
 .addressSearch {
-    background-color: #D0F4BA;
+    background-color: var(--secondary-color);
     border: none;
+    margin-bottom: 3%;
 }
 
 /* carsNearby*/
@@ -122,11 +144,50 @@ nav ul {
     width: 5%;
 }
 
+.btnCN {
+    margin: 3%;
+}
+
+.parent {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+.background {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+.marker {
+    position: absolute;
+    max-width: 50px;
+    height: auto;
+}
+.image1 {
+    top: 50px;
+    left: 50px;
+}
+.image2 {
+    top: 500px;
+    left: 500px;
+}
+.image3 {
+    top: 500px;
+    left: 200px;
+}
+.image4 {
+    top: 300px;
+    left: 650px;
+}
+.image5 {
+    top: 100px;
+    left: 300px;
+}
+
 /* carInfo */
 .footer {
     width: 100%;
-    background-color: #D0F4BA;
-
+    background-color: var(--secondary-color);
 }
 .row {
     width: 100%;
@@ -138,37 +199,37 @@ nav ul {
     text-align: left;
 }
 
+#confirm {
+    margin-top: 4%
+}
+
 /* rental */
 .timer {
     text-align: center;
 }
 
-.pickUpReturn {
-    text-align: center;
-}
-
-.pickUpReturn button {
-
+#useCarButton, #returnCarButton {
+    display: block;
+    margin: 5% auto auto;
 }
 
 /* receipt */
 .total {
-    background-color: #D0F4BA;
+    background-color: var(--secondary-color);
     text-align: center;
 }
 
-/* For wide screens  */
+.btnr {
+    margin-bottom: 2%;
+}
+
+/* For wide screens */
 @media (min-width:992px) {
     nav ul {
-        background: #A1EF7A;
+        background: var(--primary-color);
     }
 
-    #join {
-        display: inline;
-        margin: auto;
-    }
-
-    #login {
+    #join, #login, #useCarButton, #returnCarButton {
         display: inline;
         margin: auto;
     }
