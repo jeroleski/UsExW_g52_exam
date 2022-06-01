@@ -53,14 +53,19 @@ function firebaseSignIn(p) {
         })
 }
 
-function signOut() {
-    auth.signOut()
-        .then(() => {
-            console.log("the user has signed out")
-            window.location.href = "index.html"
-        })
-        .catch(error => {
-            console.log(error)
-        })
+function trySignOut() {
+    try {
+        auth.signOut()
+            .then(() => {
+                console.log("the user has signed out")
+                window.location.href = "index.html"
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    } catch (e) {
+        sessionStorage.removeItem("fullName")
+        window.location.href = "index.html"
+    }
 }
 
