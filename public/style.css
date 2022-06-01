@@ -172,8 +172,7 @@ p, h2, h3, h4, h5, ol {
 
 #useCarButton, #returnCarButton {
     display: block;
-    margin: auto;
-    margin-top: 5%;
+    margin: 5% auto auto;
 }
 
 /* receipt */
