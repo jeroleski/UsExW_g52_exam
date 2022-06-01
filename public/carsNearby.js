@@ -1,8 +1,4 @@
 //TODO: check that a car with session key "currentCar" is not rented when renting a new car
-//TODO: Receipt
-//TODO: Make a timer on rental
-//TODO: fix firebase login
-//TODO: make profile use user data
 
 class Car {
     constructor(name, location, power) {
@@ -11,6 +7,7 @@ class Car {
         this.power = power
     }
 }
+
 function openConfirmation(name) {
     let cars = getDummyData()
     let car = cars.get(name)
@@ -24,7 +21,7 @@ function openConfirmation(name) {
 
     let conBtn = document.getElementById("continueButton")
     conBtn.onclick = function () {
-        window.location.href = `carInfo.html?name=${car.name}&carLocation=${car.location}&power=${car.power}`
+        window.location.href = `carInfo.html?name=${car.name}&location=${car.location}&power=${car.power}`
     }
 
     $('#carSelectModal').modal('show')
@@ -45,39 +42,4 @@ function getDummyData() {
     cars.set(car4.name, car4)
     cars.set(car5.name, car5)
     return cars
-}
-
-
-function loadCarInfoPage(){
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-
-    let name = urlParams.get("name")
-    let carLocation = urlParams.get('carLocation')
-    let power = "Power: "+urlParams.get('power')+"%";
-    document.getElementById('carName').innerText=name;
-    document.getElementById('location').innerText=carLocation;
-    document.getElementById('power').innerText=power;
-
-    document.getElementById('confirm').onclick= function () {setCurrentCar(name, carLocation, power); window.location.href = 'rental.html'}
-}
-
-function setCurrentCar(name, carLocation, power){
-    let currentCar = new Car(name, carLocation, power);
-    sessionStorage.setItem("currentCar", currentCar);
-}
-
-function currentCarName(){
-    if(sessionStorage.getItem("currentCar") == null) return;
-    document.getElementById('carName').innerText=sessionStorage.getItem("currentCar").name;
-}
-
-function currentCarLocation(){
-    if(sessionStorage.getItem("currentCar") == null) return;
-    document.getElementById('location').innerText=sessionStorage.getItem("currentCar").location;
-}
-
-function currentCarPower(){
-    if(sessionStorage.getItem("currentCar") == null) return;
-    document.getElementById('power').innerText=sessionStorage.getItem("currentCar").power;
 }

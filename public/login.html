@@ -72,16 +72,39 @@
         <h1 id="usedFor"></h1>
     </div>
     <div class="row">
-        <button class="btn btn-primary" type="button" onclick="signIn('google')">
+        <button class="btn btn-primary" type="button" onclick="trySIgnIn('google')">
             <img src="icons/icons8-google.svg">
             Google
         </button>
     </div>
     <div class="row">
-        <button class="btn btn-primary" type="button" onclick="signIn('facebook')">
+        <button class="btn btn-primary" type="button" onclick="trySIgnIn('facebook')">
             <img src="icons/icons8-facebook.svg">
             Facebook
         </button>
+    </div>
+    <div class="row">
+        <button class="btn btn-primary" type="button" onclick="trySIgnIn('')">
+            ANONYMOUS
+        </button>
+    </div>
+</div>
+
+<div class="modal fade" id="noFirebaseModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="errorTypeLabel">Can not log in using firebase!</h3>
+            </div>
+            <div class="modal-body">
+                <h5 id="errorMessageLabel">This might happen because you don't have access to use firebase authentication;
+                    if you are viewing the website directly from the HTML files, instead of using the webserver.
+                    You can always log in using the anonymous profile.</h5>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Okay</button>
+            </div>
+        </div>
     </div>
 </div>
 

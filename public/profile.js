@@ -1,5 +1,4 @@
 //TODO: the go back and save button should share the same spot (save is at the wrong spot)
-//TODO: make the dummy data use data from the logged in user (session storage key: "user")
 
 function listenForChanges() {
     let form = document.getElementById("profileData");
@@ -118,5 +117,7 @@ function removeErrors() {
 }
 
 function getDummyData() {
-    return ["Nanna Jensen", "1999-02-01", "1234567890123456", "2023-04", "123", "abc123def"]
+    let fullName = sessionStorage.getItem("fullName")
+    if (! fullName) fullName = "Nanna Jensen"
+    return [fullName, "1999-02-01", "1234567890123456", "2023-04", "123", "abc123def"]
 }

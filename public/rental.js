@@ -56,8 +56,8 @@ function price() {
 
 function goToReceipt() {
     let carName = ""
-    let car = sessionStorage.getItem("currentCar")
-    if (car) carName = car.name
+    let carString = sessionStorage.getItem("currentCar")
+    if (carString) carName = JSON.parse(carString).name
 
     clearInterval(timeChanger)
     sessionStorage.removeItem("currentCar")
@@ -68,8 +68,9 @@ function goToReceipt() {
 }
 
 function loadRental() {
-    let car = sessionStorage.getItem("currentCar")
-    if (! car) {
+    let carString = sessionStorage.getItem("currentCar")
+    console.log(carString)
+    if (! carString) {
         console.log("opening modal")
         document.getElementById("continueButton").onclick = function () {
             window.location.href = 'carsNearby.html'
@@ -77,12 +78,12 @@ function loadRental() {
         $('#noRentingModal').modal('show')
         return
     }
+    let car = JSON.parse(carString)
     document.getElementById("carNameLabel").innerText = car.name
     document.getElementById("carLocationLabel").innerText = car.location
     document.getElementById("carPowerLabel").innerText = car.power
 
     if (! sessionStorage.getItem("rentedTime")) {
-        console.log(sessionStorage.getItem("rentedTime"))
         document.getElementById("returnCarButton").innerText = "Cancel"
     }
 
