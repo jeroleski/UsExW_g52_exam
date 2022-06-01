@@ -4,11 +4,12 @@ const facebookProvider = new firebase.auth.FacebookAuthProvider()
 
 auth.onAuthStateChanged(user => {
     if (user) { //user is signed in
-        //go to rent car map
-
+        sessionStorage.setItem("fullName", user.displayName)
+        console.log(user.displayName)
+        window.location.href = 'carsNearby.html'
     } else {//user is signed out
-        //go back to log in page
-
+        sessionStorage.removeItem("fullName")
+        window.location.href = 'index.html'
     }
 })
 
@@ -31,6 +32,7 @@ function signIn(p) {
             provider = facebookProvider
             break
         default:
+            window.location.href = 'carsNearby.html'
             return
     }
 
@@ -39,7 +41,6 @@ function signIn(p) {
             let user = result.user
             console.log("signed in as:")
             console.log(user)
-            sessionStorage.setItem("user", user)
         })
         .catch(error => {
             console.log(error)
@@ -49,8 +50,8 @@ function signIn(p) {
 function signOut() {
     auth.signOut()
         .then(() => {
-            console.log("user has signed out")
-            sessionStorage.removeItem("user")
+            console.log("the user has signed out")
+            window.location.href = "index.html"
         })
         .catch(error => {
             console.log(error)
