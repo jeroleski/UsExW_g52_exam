@@ -25,7 +25,7 @@ function loadCarInfoPage(){
         confirmButton.innerText = "See rental"
         confirmButton.onclick = function () {window.location.href = 'rental.html'}
     } else {
-        document.getElementById('confirm').onclick = function () {setCurrentCar(name, carLocation, power); }//window.location.href = 'rental.html'}
+        document.getElementById('confirm').onclick = function () {setCurrentCar(name, carLocation, power); window.location.href = 'rental.html'}
     }
 }
 
