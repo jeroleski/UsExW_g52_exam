@@ -9,6 +9,13 @@ function pageUsage() {
     }
 }
 
+function isLoggedIn() {
+    try {
+        !!firebase.auth().currentUser
+    } catch (e) {
+        return false
+    }
+}
 
 function trySIgnIn(p) {
     try {
