@@ -2,7 +2,7 @@
 
 ## About the project
 
-This car sharing website, were created as part of the course
+This car sharing website was created as part of the course
 'User experience og webprogrammering (Spring 2022)' at ITU.
 
 ## Running the project
@@ -16,8 +16,8 @@ https://sharingiscaring-bd425.web.app/
 ### NOTE
 
 Please consider the following, when running the project locally:
-- Please note, that running the project locally, will produce errors at the pages ``login.html`` and ``profile.html``, because they try to import Firebase libraries, that are only availeble on the online.
-- The reason for inclussion in the hand-in (instead of just removing them), is that we handed in our functional working code, it is just only working as intended online.
+- Please note, that running the project locally, will produce errors at the pages ``login.html`` and ``profile.html``, because they try to import Firebase libraries, that are only available online.
+- The reason for inclusion in the hand-in (instead of just removing them), is that we handed in our functional working code, it is just only working as intended online.
 - It is not possible to use the login features (but the error when clicking it is handled), so please use the anonymous user 'Nanna Jensen'.
 
 ## Creators
