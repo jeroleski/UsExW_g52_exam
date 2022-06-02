@@ -22,9 +22,9 @@ function loadReceipt() {
 
     document.getElementById("carNameLabel").innerText = carName
     document.getElementById("dateLabel").innerText = new Date().toLocaleDateString()
-    document.getElementById("usedTimeLabel").innerText = timeUsed
-    document.getElementById("initialPriceLabel").innerText = `${initialPrice}`
-    document.getElementById("pricePrMinuteLabel").innerText = `${pricePrMinute}`
-    document.getElementById("usagePriceLabel").innerText = `${usagePrice}`
-    document.getElementById("totalPriceLabel").innerText = `${totalPrice}`
+    document.getElementById("usedTimeLabel").innerText = `${timeUsed} minutes`
+    document.getElementById("initialPriceLabel").innerText = `${initialPrice} DKK`
+    document.getElementById("pricePrMinuteLabel").innerText = `${pricePrMinute} DKK`
+    document.getElementById("usagePriceLabel").innerText = `${usagePrice} DKK`
+    document.getElementById("totalPriceLabel").innerText = `${totalPrice} DKK`
 }
