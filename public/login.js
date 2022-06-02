@@ -31,19 +31,11 @@ function firebaseSignIn(p) {
             return
     }
 
-    firebase.auth().onAuthStateChanged(user => {
-        if (user) { //user is signed in
-            sessionStorage.setItem("fullName", user.displayName)
-            window.location.href = 'carsNearby.html'
-        } else {//user is signed out
-            sessionStorage.removeItem("fullName")
-            window.location.href = 'index.html'
-        }
-    })
-
     firebase.auth().signInWithPopup(provider)
         .then(result => { //handled by onAuthStateChanged()
             let user = result.user
+            sessionStorage.setItem("fullName", user.displayName)
+            window.location.href = 'carsNearby.html'
         })
         .catch(error => {
             console.log(error)
@@ -54,7 +46,8 @@ function trySignOut() {
     try {
         firebase.auth().signOut()
             .then(() => { //handled by onAuthStateChanged()
-
+                sessionStorage.removeItem("fullName")
+                window.location.href = 'index.html'
             })
             .catch(error => {
                 console.log(error)
