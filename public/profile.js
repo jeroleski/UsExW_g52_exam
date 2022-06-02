@@ -2,16 +2,19 @@
 
 function listenForChanges() {
     let form = document.getElementById("profileData");
-    let backButton = document.getElementById("backButton")
     let saveButton = document.getElementById("saveButton")
 
     form.addEventListener("input", function () {
-        backButton.classList.add("invisible")
         saveButton.classList.remove("invisible")
     });
 }
 
 function fillInData() {
+    let params = new URLSearchParams(window.location.search)
+    if (params.get("anonymous") === "true") {
+        return
+    }
+
     let fullName = sessionStorage.getItem("fullName")
     let birthday = sessionStorage.getItem("birthday")
     let creditCardNumber = sessionStorage.getItem("creditCardNumber")
@@ -30,13 +33,6 @@ function fillInData() {
         driversLicense = dummyData[5]
     }
 
-    console.log(fullName)
-    console.log(birthday)
-    console.log(creditCardNumber)
-    console.log(creditCardExpiration)
-    console.log(creditCardVerify)
-    console.log(driversLicense)
-
     document.getElementById("fullName").value = fullName
     document.getElementById("birthday").value = birthday
     document.getElementById("creditCardNumber").value = creditCardNumber
@@ -53,13 +49,6 @@ function saveData() {
     let creditCardVerify = document.getElementById("creditCardVerify").value
     let driversLicense = document.getElementById("driversLicense").value
 
-    console.log(fullName)
-    console.log(birthday)
-    console.log(creditCardNumber)
-    console.log(creditCardExpiration)
-    console.log(creditCardVerify)
-    console.log(driversLicense)
-
     let errorMessages = verifyData(fullName, birthday, creditCardNumber, creditCardExpiration, creditCardVerify, driversLicense)
     if (errorMessages.length !== 0) {
         setErrors(errorMessages)
@@ -74,9 +63,8 @@ function saveData() {
     sessionStorage.setItem("creditCardVerify", creditCardVerify)
     sessionStorage.setItem("driversLicense", driversLicense)
 
-    document.getElementById("backButton").classList.remove("invisible")
     document.getElementById("saveButton").classList.add("invisible")
-    }
+}
 
 function verifyData(fullName, birthday, creditCardNumber, creditCardExpiration, creditCardVerify, driversLicense) {
     let errors = []
