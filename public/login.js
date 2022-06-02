@@ -9,14 +9,6 @@ function pageUsage() {
     }
 }
 
-function isLoggedIn() {
-    try {
-        !!firebase.auth().currentUser
-    } catch (e) {
-        return false
-    }
-}
-
 function trySIgnIn(p) {
     try {
         firebaseSignIn(p)
@@ -36,7 +28,7 @@ function firebaseSignIn(p) {
             provider = new firebase.auth.FacebookAuthProvider()
             break
         default:
-            window.location.href = 'carsNearby.html'
+            window.location.href = 'profile.html?anonymous=true'
             return
     }
 
@@ -64,10 +56,9 @@ function firebaseSignIn(p) {
 
 function trySignOut() {
     try {
-        auth.signOut()
+        firebase.auth().signOut()
             .then(() => {
                 console.log("the user has signed out")
-                window.location.href = "index.html"
             })
             .catch(error => {
                 console.log(error)

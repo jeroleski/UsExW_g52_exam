@@ -205,12 +205,7 @@ body {
     margin-top: 4%
 }
 
-/* rental */
-.timer {
-    text-align: center;
-}
-
-#useCarButton, #returnCarButton {
+#useCarButton, #returnCarButton, #googleLoginButton, #facebookLoginButton, #anonymousLoginButton {
     display: block;
     margin: 5% auto auto;
 }
@@ -231,7 +226,7 @@ body {
         background: var(--primary-color);
     }
 
-    #join, #login, #useCarButton, #returnCarButton {
+    #join, #login, #useCarButton, #returnCarButton, #googleLoginButton, #facebookLoginButton #anonymousLoginButton {
         display: inline;
         margin: auto;
     }
