@@ -75,6 +75,11 @@ p, h2, h3, h4, h5, ol {
     background-color: #96cef1;
 }
 
+.broadButton {
+    width: 200px;
+    height: 40px;
+}
+
 .center {
     text-align: center;
 }
