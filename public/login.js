@@ -13,7 +13,6 @@ function trySIgnIn(p) {
     try {
         firebaseSignIn(p)
     } catch (e) {
-        console.log("opening modal")
         $('#noFirebaseModal').modal('show')
     }
 }
@@ -35,7 +34,6 @@ function firebaseSignIn(p) {
     firebase.auth().onAuthStateChanged(user => {
         if (user) { //user is signed in
             sessionStorage.setItem("fullName", user.displayName)
-            console.log(user.displayName)
             window.location.href = 'carsNearby.html'
         } else {//user is signed out
             sessionStorage.removeItem("fullName")
@@ -44,10 +42,8 @@ function firebaseSignIn(p) {
     })
 
     firebase.auth().signInWithPopup(provider)
-        .then(result => {
+        .then(result => { //handled by onAuthStateChanged()
             let user = result.user
-            console.log("signed in as:")
-            console.log(user)
         })
         .catch(error => {
             console.log(error)
@@ -57,8 +53,8 @@ function firebaseSignIn(p) {
 function trySignOut() {
     try {
         firebase.auth().signOut()
-            .then(() => {
-                console.log("the user has signed out")
+            .then(() => { //handled by onAuthStateChanged()
+
             })
             .catch(error => {
                 console.log(error)

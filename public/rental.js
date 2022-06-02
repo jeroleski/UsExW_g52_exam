@@ -71,9 +71,7 @@ function goToReceipt() {
 
 function loadRental() {
     let carString = sessionStorage.getItem("currentCar")
-    console.log(carString)
     if (! carString) {
-        console.log("opening modal")
         document.getElementById("continueButton").onclick = function () {
             window.location.href = 'carsNearby.html'
         }

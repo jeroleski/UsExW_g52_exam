@@ -9,7 +9,6 @@ function loadReceipt() {
     let timeUsed = params.get("timeUsed")
 
     if (! timeUsed) {
-        console.log("opening modal")
         document.getElementById("continueButton").onclick = function () {
             window.location.href = 'rental.html'
         }
